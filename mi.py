@@ -34,6 +34,12 @@ class Group:
         self.name = name
         self.activites = activites
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.__str__()
+
 
 class Activity:
     def __init__(self, groupName, name, startTime, endTime, days):
@@ -46,7 +52,7 @@ class Activity:
         self.activityTime = endTime - startTime
 
     def __str__(self):
-        return self.name
+        return "T" + str(self.startTime) + "-" + str(self.endTime) + ": " + str(self.name)
 
     def __repr__(self):
         return self.__str__()

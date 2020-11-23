@@ -9,11 +9,11 @@ from mi import Group
 def run():
 
     classRooms = [
-        ClassRoom("C1"),
-        ClassRoom("C2"),
-        ClassRoom("C3"),
-        ClassRoom("C4"),
-        ClassRoom("C5"),
+        ClassRoom(0),
+        ClassRoom(1),
+        ClassRoom(2),
+        ClassRoom(3),
+        ClassRoom(4),
     ]
 
     groups = [
@@ -31,7 +31,7 @@ def run():
                 Activity(2, "G2A", 7, 9, [1, 2, 4]),
                 Activity(2, "G2B", 5, 7, [3, 5, 6]),
                 Activity(2, "G2C", 6, 8, [2, 3, 4]),
-                Activity(2, "G2D", 9, 10, [1, 4, 3, 4]),
+                Activity(2, "G2D", 9, 10, [1, 3, 4]),
                 Activity(2, "G2E", 11, 12, [2, 3, 4]),
             ],
         ),
@@ -72,8 +72,27 @@ def run():
 
     t = TimeTableGenerator(classRooms, groups)
 
+    table = []
+
+    for i in range(0, 7):
+        table.append([])
+
+        for j, g in enumerate(classRooms):
+            table[i].append([])
+
     for a in t.generate():
-        print(a)
+        day = a[0]
+        classRoom = a[1].name
+        table[day][classRoom] = a[2]
+
+    weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+    for row, days in enumerate(table):
+        print(weekDays[row])
+        for col, classRoom in enumerate(days):
+            for activity in table[row][col]:
+                print("C" + str(col) + ", " + str(activity), end="\n")
+        print("\n\n")
 
     # print(t.activitySelector())
 
