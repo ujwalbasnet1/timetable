@@ -12,9 +12,7 @@
 # Write a program to generate a weekly timetable for the school.
 # Hint: use greedy algorithms.
 
-# STEPS
-
-# 1. sort by finish time ascending order
+# STEP
 
 class ClassRoom:
     def __init__(self, name):

@@ -21,53 +21,53 @@ def run():
             1,
             [
                 Activity(1, "G1A", 5, 7, [0, 1]),
-                Activity(1, "G1B", 6, 7, [1, 3, 5]),
-                Activity(1, "G1C", 7, 9, [2, 5, 6]),
+                Activity(1, "G1B", 6, 7, [3, 5]),
+                Activity(1, "G1C", 7, 9, [2, 6]),
             ],
         ),
         Group(
             2,
             [
-                Activity(2, "G2A", 7, 9, [1, 2, 4]),
-                Activity(2, "G2B", 5, 7, [3, 5, 6]),
-                Activity(2, "G2C", 6, 8, [2, 3, 4]),
-                Activity(2, "G2D", 9, 10, [1, 3, 4]),
-                Activity(2, "G2E", 11, 12, [2, 3, 4]),
+                Activity(2, "G2A", 7, 9, [2]),
+                Activity(2, "G2B", 5, 7, [3, 6]),
+                Activity(2, "G2C", 6, 8, [4]),
+                Activity(2, "G2D", 9, 10, [1]),
+                Activity(2, "G2E", 11, 12, [5, 4]),
             ],
         ),
         Group(
             3,
             [
-                Activity(3, "G3A", 6, 8, [0, 1, 2, 3]),
-                Activity(3, "G3B", 8, 9, [3, 5, 6]),
-                Activity(3, "G3C", 10, 12, [2, 4, 5]),
-                Activity(3, "G3D", 11, 12, [1, 3, 4, 5]),
+                Activity(3, "G3A", 6, 8, [0, 3]),
+                Activity(3, "G3B", 8, 9, [5, 6]),
+                Activity(3, "G3C", 10, 12, [2, 4]),
+                Activity(3, "G3D", 11, 12, [1]),
             ],
         ),
-        # Group(
-        #     4,
-        #     [
-        #         Activity(4, "G4A", 1),
-        #         Activity(4, "G4B", 1),
-        #         Activity(4, "G4C", 1),
-        #     ],
-        # ),
-        # Group(
-        #     5,
-        #     [
-        #         Activity(5, "G5A", 1),
-        #         Activity(5, "G5B", 2),
-        #         Activity(5, "G5C", 1),
-        #     ],
-        # ),
-        # Group(
-        #     6,
-        #     [
-        #         Activity(6, "G6A", 2),
-        #         Activity(6, "G6B", 1),
-        #         Activity(6, "G6C", 1),
-        #     ],
-        # ),
+        Group(
+            4,
+            [
+                Activity(4, "G4A", 5, 6, [3]),
+                Activity(4, "G4B", 6, 8, [1]),
+                Activity(4, "G4C", 10, 12, [5]),
+            ],
+        ),
+        Group(
+            5,
+            [
+                Activity(5, "G5A", 8, 10, [6]),
+                Activity(5, "G5B", 7, 8, [0]),
+                Activity(5, "G5C", 9, 10, [2]),
+            ],
+        ),
+        Group(
+            6,
+            [
+                Activity(6, "G6A", 10, 12, [4]),
+                Activity(6, "G6B", 7, 9, [5]),
+                Activity(6, "G6C", 11, 12, [3]),
+            ],
+        ),
     ]
 
     t = TimeTableGenerator(classRooms, groups)
